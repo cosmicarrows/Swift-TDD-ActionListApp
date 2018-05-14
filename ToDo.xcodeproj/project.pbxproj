@@ -18,6 +18,7 @@
 		26F386C420969B28001DA737 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F386C320969B28001DA737 /* ToDoItem.swift */; };
 		26F386C62096A7B9001DA737 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F386C52096A7B9001DA737 /* Location.swift */; };
 		26F386C82096A9EB001DA737 /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F386C72096A9EB001DA737 /* LocationTests.swift */; };
+		E9778C6220A92D92002713A6 /* ItemManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9778C6120A92D92002713A6 /* ItemManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		26F386C320969B28001DA737 /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToDoItem.swift; path = Model/ToDoItem.swift; sourceTree = "<group>"; };
 		26F386C52096A7B9001DA737 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Location.swift; path = Model/Location.swift; sourceTree = "<group>"; };
 		26F386C72096A9EB001DA737 /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationTests.swift; path = Model/LocationTests.swift; sourceTree = "<group>"; };
+		E9778C6120A92D92002713A6 /* ItemManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemManagerTests.swift; path = Model/ItemManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				26F386AA20969904001DA737 /* Info.plist */,
 				26F386C1209699D9001DA737 /* ToDoItemTests.swift */,
 				26F386C72096A9EB001DA737 /* LocationTests.swift */,
+				E9778C6120A92D92002713A6 /* ItemManagerTests.swift */,
 			);
 			path = ToDoTests;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9778C6220A92D92002713A6 /* ItemManagerTests.swift in Sources */,
 				26F386C82096A9EB001DA737 /* LocationTests.swift in Sources */,
 				26F386C2209699D9001DA737 /* ToDoItemTests.swift in Sources */,
 			);
