@@ -9,15 +9,14 @@
 import Foundation
 
 class ItemManager: NSObject {
-    var toDoCount = 0
-    var doneCount = 0
+    var toDoCount: Int {return toDoItems.count}
+    var doneCount: Int {return doneItems.count}
     //no one else can access this variable
     private var toDoItems: [ToDoItem] = []
     private var doneItems: [ToDoItem] = []
     
     
     func add(item: ToDoItem) {
-        toDoCount += 1
         toDoItems.append(item)
     }
     
@@ -27,11 +26,8 @@ class ItemManager: NSObject {
     }
     
     func checkItem(index: Int){
-        toDoCount -= 1
-        doneCount += 1
         let item = toDoItems.remove(at: index)
         doneItems.append(item)
-        
     }
     
     func doneItem(at index: Int) -> ToDoItem {

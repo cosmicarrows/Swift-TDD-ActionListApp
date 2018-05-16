@@ -72,7 +72,6 @@ class ItemManagerTests: XCTestCase {
         itemManager.checkItem(index: 0)
         let returnedItem = itemManager.doneItem(at: 0)
         XCTAssertEqual(item.title, returnedItem.title)
-        
     }
     
 }
