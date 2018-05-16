@@ -36,6 +36,43 @@ class ItemManagerTests: XCTestCase {
         itemManager.add(item: ToDoItem.init(title: ""))
         XCTAssertEqual(itemManager.toDoCount, 1)
     }
+    
+    //provide a method that returns an Item
+    func test_ItemManagerReturns_NewlyAddedItem(){
+        let item = ToDoItem.init(title: "")
+        itemManager.add(item: item)
+        //inside this box we put a...............the returned object from this instance method
+        let returnedItem = itemManager.item(findItemAtIndex: 0)
+        XCTAssertEqual(returnedItem.title, item.title)
+    }
+    
+    //The user has to be able to check the items....
+    func test_CheckItemAt_ChangesCounts(){
+        itemManager.add(item: ToDoItem.init(title: ""))
+        itemManager.checkItem(index:0)
+        //When the user checks an item, toDoCount should decrease and doneCount should increase
+        XCTAssertEqual(itemManager.toDoCount, 0)
+        XCTAssertEqual(itemManager.doneCount, 1)
+    }
+    
+    //When checking an item, it should be removed from the toDoItems array
+    func test_CheckItemAt_RemovesFromToDoItems(){
+        let first = ToDoItem.init(title: "First")
+        let second = ToDoItem.init(title: "Second")
+        itemManager.add(item: first)
+        itemManager.add(item: second)
+        itemManager.checkItem(index: 0)
+        XCTAssertEqual(itemManager.item(findItemAtIndex: 0).title, "Second")
+    }
    
+    //the checked items will be shown below the unchecked items. This means that ItemManager also needs to provide a method that returns checked items
+    func test_DoneItemAt_ReturnsCheckedItem(){
+        let item = ToDoItem.init(title: "Foo")
+        itemManager.add(item: item)
+        itemManager.checkItem(index: 0)
+        let returnedItem = itemManager.doneItem(at: 0)
+        XCTAssertEqual(item.title, returnedItem.title)
+        
+    }
     
 }
