@@ -30,7 +30,12 @@ class ItemManagerTests: XCTestCase {
         XCTAssertEqual(itemManager.doneCount, 0)
     }
     
-    
+    //the ItemManager should be able to add items to the list therefore there should be a method that takes an item
+    func test_AddItems_IncreasesToDoCount_ToOne(){
+        //assume itemManager has an addItem method...
+        itemManager.add(item: ToDoItem.init(title: ""))
+        XCTAssertEqual(itemManager.toDoCount, 1)
+    }
    
     
 }

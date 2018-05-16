@@ -9,6 +9,9 @@
 import Foundation
 
 class ItemManager: NSObject {
-    let toDoCount = 0
-    let doneCount = 0
+    var toDoCount = 0
+    var doneCount = 0
+    func add(item: ToDoItem) {
+        toDoCount += 1
+    }
 }
