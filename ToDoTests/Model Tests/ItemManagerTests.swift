@@ -74,4 +74,27 @@ class ItemManagerTests: XCTestCase {
         XCTAssertEqual(item.title, returnedItem.title)
     }
     
+    func test_RemoveAll_ResultsInCountsBeZero(){
+        itemManager.add(item: ToDoItem.init(title: "Foo"))
+        itemManager.add(item: ToDoItem.init(title: "Bar"))
+        itemManager.checkItem(index: 0)
+        
+        XCTAssertEqual(itemManager.toDoCount, 1)
+        XCTAssertEqual(itemManager.doneCount, 1)
+        
+        itemManager.removeAll()
+        
+        XCTAssertEqual(itemManager.toDoCount, 0)
+        XCTAssertEqual(itemManager.doneCount, 0)
+    }
+    
+    //we would like to make sure that each to-do item can only be added to the list once
+    func test_noDuplicateToDoItems(){
+        itemManager.add(item: ToDoItem.init(title: "Foo"))
+        itemManager.add(item: ToDoItem.init(title: "Foo"))
+        
+        XCTAssertEqual(itemManager.toDoCount, 1)
+    }
+    
+    
 }

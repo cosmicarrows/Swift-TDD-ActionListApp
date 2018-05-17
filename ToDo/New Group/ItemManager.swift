@@ -17,7 +17,9 @@ class ItemManager: NSObject {
     
     
     func add(item: ToDoItem) {
-        toDoItems.append(item)
+        if !toDoItems.contains(item){
+            toDoItems.append(item)
+        }
     }
     
     func item(findItemAtIndex index: Int) -> ToDoItem {
@@ -32,6 +34,11 @@ class ItemManager: NSObject {
     
     func doneItem(at index: Int) -> ToDoItem {
         return doneItems[index]
+    }
+    
+    func removeAll(){
+        toDoItems.removeAll()
+        doneItems.removeAll()
     }
     
 }
