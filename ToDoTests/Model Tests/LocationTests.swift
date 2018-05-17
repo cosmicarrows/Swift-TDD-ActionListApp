@@ -50,4 +50,15 @@ class LocationTests: XCTestCase {
         XCTAssertNotEqual(first, second)
     }
     
+    //make sure that the locations that differ in terms of longitude are not equal
+    func test_Locations_WhenLongitudeDiffers_AreNotEqual(){
+        let firstCoordinate = CLLocationCoordinate2D.init(latitude: CLLocationDegrees.init(0.0), longitude: CLLocationDegrees.init(1.0))
+        let first = Location.init(name: "Foo", coordinate: firstCoordinate)
+        let secondCoordinate = CLLocationCoordinate2D.init(latitude: CLLocationDegrees.init(0.0), longitude: CLLocationDegrees.init(0.0))
+        let second = Location.init(name: "Foo", coordinate: secondCoordinate)
+        XCTAssertNotEqual(first, second)
+    }
+    
+    
+    
 }
