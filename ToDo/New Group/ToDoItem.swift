@@ -10,7 +10,10 @@ import Foundation
 //does it matter if I put the code on the inside or the outside?
 struct ToDoItem: Equatable {
     static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-        if lhs.location?.name != rhs.location?.name {
+        if lhs.location != rhs.location {
+            return false
+        }
+        if lhs.timestamp != rhs.timestamp {
             return false
         }
         return true
