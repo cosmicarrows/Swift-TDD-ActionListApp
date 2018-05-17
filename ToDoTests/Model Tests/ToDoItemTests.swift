@@ -46,4 +46,17 @@ class ToDoItemTests: XCTestCase {
         
         XCTAssertEqual(item.location?.name, location.name, "should set location")
     }
+    //We would like to be able to compare to-do items in case there are two items that are similar in the ocllection
+    func text_EqualItems_AreEqual(){
+        let first = ToDoItem.init(title: "Foo")
+        let second = ToDoItem.init(title: "Foo")
+        XCTAssertEqual(first, second)
+    }
+    
+    //edgeCase testing if two location properties are not equal
+    func test_Items_WhenLocationDiffers_AreNotEqual(){
+        let first = ToDoItem.init(title: "", location: Location.init(name: "Foo"))
+        let second = ToDoItem.init(title: "", location: Location.init(name: "Bar"))
+        XCTAssertNotEqual(first, second)
+    }
 }

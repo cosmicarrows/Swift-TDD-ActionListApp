@@ -11,7 +11,7 @@ import Foundation
 class ItemManager: NSObject {
     var toDoCount: Int {return toDoItems.count}
     var doneCount: Int {return doneItems.count}
-    //no one else can access this variable
+    //abstracted arrays that are hidden from other objects when instantiated
     private var toDoItems: [ToDoItem] = []
     private var doneItems: [ToDoItem] = []
     
