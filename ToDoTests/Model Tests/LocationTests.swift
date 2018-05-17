@@ -68,7 +68,14 @@ class LocationTests: XCTestCase {
         let secondLocation = Location.init(name: secondName, coordinate: secondCoord)
         
         XCTAssertNotEqual(firstLocation, secondLocation, line: line)
-
     }
     
+    //one location has a coordinate set and the other one does not, they should be considered to be different
+    func test_Locations_WhenOnlyOneHasCoordinate_AreNotEqual(){
+        performNotEqualTestWith(firstName: "Foo", secondName: "Foo", firstLongLat: (0.0, 0.0), secondLongLat: nil)
+    }
+    
+    func test_Locations_WhenNamesDiffer_AreNotEqual(){
+        performNotEqualTestWith(firstName: "Foo", secondName: "Bar", firstLongLat: nil, secondLongLat: nil)
+    }
 }

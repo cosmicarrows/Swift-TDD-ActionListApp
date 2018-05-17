@@ -17,6 +17,9 @@ struct Location: Equatable {
         if lhs.coordinate?.longitude != rhs.coordinate?.longitude {
             return false
         }
+        if lhs.name != rhs.name {
+            return false
+        }
         return true
     }
     
@@ -26,4 +29,6 @@ struct Location: Equatable {
         self.name = name
         self.coordinate = coordinate
     }
+    
+    
 }
