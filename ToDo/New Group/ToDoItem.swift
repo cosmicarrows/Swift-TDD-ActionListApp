@@ -8,23 +8,7 @@
 
 import Foundation
 //does it matter if I put the code on the inside or the outside?
-struct ToDoItem: Equatable {
-    static func == (lhs: ToDoItem, rhs: ToDoItem) -> Bool {
-        if lhs.location != rhs.location {
-            return false
-        }
-        if lhs.timestamp != rhs.timestamp {
-            return false
-        }
-        if lhs.itemDescription != rhs.itemDescription {
-            return false
-        }
-        if lhs.title != rhs.title {
-            return false
-        }
-        return true
-    }
-    
+struct ToDoItem {
     
     let title: String
     let itemDescription: String?
